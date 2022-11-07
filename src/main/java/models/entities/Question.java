@@ -3,7 +3,8 @@ package models.entities;
 import jakarta.persistence.*;
 
 @Entity
-public class User {
+public class Question {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -11,9 +12,6 @@ public class User {
     private Integer id;
 
     @Column
-    private String email;
+    private String questionText;
 
-    @Column
-    @OneToMany()
-    private Answer User;
 }
