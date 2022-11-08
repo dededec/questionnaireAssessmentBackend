@@ -44,8 +44,8 @@ public class QuestionnaireAssessmentBackendApplication {
 
 			Question question2 =new Question(2, "¿A cuantos va a despedir Solera?");
 //
-			answerService.addAnswerToQuestion(new Answer(1, "A muchos", question2));
-			answerService.addAnswerToQuestion(new Answer(2, "A todos", question2));
+			answerService.addAnswerToQuestion(new Answer(3, "A muchos", question2));
+			answerService.addAnswerToQuestion(new Answer(4, "A todos", question2));
 //
 //
 //
