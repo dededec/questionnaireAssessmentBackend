@@ -28,4 +28,8 @@ public class User {
     private List<Answer> answers;
 
 
+    public User(String s, List<Answer> answerList) {
+        this.email = s;
+        this.answers = answerList;
+    }
 }

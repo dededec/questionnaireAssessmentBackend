@@ -50,7 +50,7 @@ public class QuestionnaireAssessmentBackendApplication {
 //
 //
 
-			userService.addUser(new User(1, "mangelmunoz877@gmail.com", answerList));
+//			userService.addUser(new User("mangelmunoz877@gmail.com", answerList));
 //			userService.addUser(new User(2, "dededec@gmail.com"));
 
 		};

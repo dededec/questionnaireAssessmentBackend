@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -26,8 +28,8 @@ public class UserController {
 
     @PostMapping(path = "/user/add")
     private ResponseEntity<User> createUser(@RequestBody UserDTO userDTO){
-        User user = new User();
-        user.setEmail(userDTO.getEmail());
+        User user = new User(userDTO.getEmail(), new ArrayList<>());
+        System.out.println(userDTO.toString());
         Answer aux;
         for (AnswerDTO dto: userDTO.getAnswers()) {
             aux = answerService.getAnswerById(dto.getId());
@@ -42,7 +44,7 @@ public class UserController {
         if(saved == null){
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
-        
+
         return new ResponseEntity<>(saved, HttpStatus.CREATED);
     }
 
