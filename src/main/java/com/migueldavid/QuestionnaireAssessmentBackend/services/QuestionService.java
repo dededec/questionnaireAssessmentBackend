@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.migueldavid.QuestionnaireAssessmentBackend.repositories.QuestionRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class QuestionService {
 
@@ -13,6 +15,11 @@ public class QuestionService {
 
     public Question addQuestion(Question question){
         return questionRepository.save(question);
+    }
+
+
+    public List<Question> getQuestions(){
+        return questionRepository.findAll();
     }
 
 

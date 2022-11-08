@@ -20,8 +20,8 @@ public class User {
     @Column
     private String email;
 
-
     @OneToMany()
     private List<Answer> answers;
+
 
 }
