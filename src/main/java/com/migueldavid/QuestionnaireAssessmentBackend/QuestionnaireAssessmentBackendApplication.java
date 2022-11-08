@@ -42,10 +42,10 @@ public class QuestionnaireAssessmentBackendApplication {
 			answerService.addAnswerToQuestion(new Answer(1, "Mucho", question1));
 			answerService.addAnswerToQuestion(new Answer(2, "Poco", question1));
 
-//			Question question2 = new Question(1, "¿Que tiene que ver el tocino con la velocidad?");
+			Question question2 =new Question(2, "¿A cuantos va a despedir Solera?");
 //
-//			answerService.addAnswerToQuestion(new Answer(1, "Muchos", question2));
-//			answerService.addAnswerToQuestion(new Answer(2, "Pocos", question2));
+			answerService.addAnswerToQuestion(new Answer(1, "A muchos", question2));
+			answerService.addAnswerToQuestion(new Answer(2, "A todos", question2));
 //
 //
 //

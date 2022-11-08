@@ -16,6 +16,7 @@ public class UserService {
     public User addUser(User user){
         return userRepository.save(user);
     }
+
     public User getUser(int id) {
         Optional<User> optUser = userRepository.findById(id);
         return optUser.orElse(null);
