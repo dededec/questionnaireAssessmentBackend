@@ -7,6 +7,7 @@ import com.migueldavid.QuestionnaireAssessmentBackend.repositories.AnswerReposit
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AnswerService {
@@ -17,6 +18,11 @@ public class AnswerService {
 
     public Answer addAnswerToQuestion(Answer answer){
         return answerRepository.save(answer);
+    }
+
+    public Answer getAnswerById(int id) {
+        Optional<Answer> opt = answerRepository.findById(id);
+        return opt.orElse(null);
     }
 
     public List<Answer> getAnswersToQuestion(Question question){
