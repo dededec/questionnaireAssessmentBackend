@@ -2,13 +2,17 @@ package com.migueldavid.QuestionnaireAssessmentBackend.models.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
 @Entity(name = "user_table")
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 @Table
 public class User {
 

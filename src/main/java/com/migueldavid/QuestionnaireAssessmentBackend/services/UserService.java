@@ -1,5 +1,6 @@
 package com.migueldavid.QuestionnaireAssessmentBackend.services;
 
+import com.migueldavid.QuestionnaireAssessmentBackend.models.dto.UserDTO;
 import com.migueldavid.QuestionnaireAssessmentBackend.models.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.migueldavid.QuestionnaireAssessmentBackend.repositories.UserRepository;
@@ -17,9 +18,9 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public User getUser(int id) {
-        Optional<User> optUser = userRepository.findById(id);
-        return optUser.orElse(null);
+    public Optional<User> getUser(String email) {
+        Optional<User> optUser = userRepository.findByEmail(email);
+        return optUser;
     }
 
 }
