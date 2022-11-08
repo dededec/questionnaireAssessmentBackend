@@ -1,5 +1,6 @@
 package com.migueldavid.QuestionnaireAssessmentBackend.controllers;
 
+import com.migueldavid.QuestionnaireAssessmentBackend.models.dto.AnswerDTO;
 import com.migueldavid.QuestionnaireAssessmentBackend.models.dto.UserDTO;
 import com.migueldavid.QuestionnaireAssessmentBackend.models.entities.Question;
 import com.migueldavid.QuestionnaireAssessmentBackend.models.entities.User;
@@ -34,7 +35,7 @@ public class UserController {
         Optional<User> user = service.getUser(email);
 
         if(!user.isEmpty()){
-            return new ResponseEntity<>(new UserDTO(user.get().getId(), user.get().getEmail(), user.get().getAnswers()),HttpStatus.FOUND);
+            return new ResponseEntity<>(new UserDTO(user.get().getId(), user.get().getEmail(), user.get().getAnswers().stream().map(ans -> new AnswerDTO(ans.getId())).toList()),HttpStatus.FOUND);
         }
 
         return new ResponseEntity<>(null, HttpStatus.OK);
