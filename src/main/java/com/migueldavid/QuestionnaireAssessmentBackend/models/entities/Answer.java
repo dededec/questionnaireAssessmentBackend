@@ -24,7 +24,7 @@ public class Answer {
     private String answerText;
 
     @ManyToOne()
-    @JoinColumn
+//    @JoinColumn
     private Question question;
 
 }
