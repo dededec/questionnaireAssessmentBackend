@@ -53,7 +53,6 @@ public class UserController {
         if(!user.isEmpty()){
             return new ResponseEntity<>(new UserDTO(user.get().getId(), user.get().getEmail(), user.get().getAnswers().stream().map(ans -> new AnswerDTO(ans.getId())).toList()),HttpStatus.FOUND);
         }
-
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
 }
