@@ -24,6 +24,7 @@ public class Answer {
     private String answerText;
 
     @ManyToOne()
+    @JsonIgnore
 //    @JoinColumn
     private Question question;
 
