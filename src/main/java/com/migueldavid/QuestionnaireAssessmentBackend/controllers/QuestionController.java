@@ -35,10 +35,25 @@ public class QuestionController {
         }
     }
 
-//    @GetMapping(path = "/question/get/{id}")
-//    private ResponseEntity<Question> getQuestion(@PathVariable int id){
-//        return new ResponseEntity<>(service., HttpStatus.BAD_REQUEST);
-//    }
+    @GetMapping(path = "/question/delete/all")
+    private ResponseEntity DeleteAllQuestions(){
+        service.deleteAllQuestions();
+        return new ResponseEntity( HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/question/delete/{id}")
+    private ResponseEntity DeleteQuestionById(@PathVariable Integer id){
+
+        Question question = service.getQuestion(id);
+
+        if(question == null){
+            return new ResponseEntity( HttpStatus.BAD_REQUEST);
+        }
+
+        service.deleteQuestion(question);
+
+        return new ResponseEntity( HttpStatus.OK);
+    }
 
     @GetMapping(path = "/question/get/all")
     private ResponseEntity<List<QuestionDTO>> getAllQuestion(){

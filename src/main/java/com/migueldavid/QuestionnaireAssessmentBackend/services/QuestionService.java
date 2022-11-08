@@ -6,6 +6,7 @@ import com.migueldavid.QuestionnaireAssessmentBackend.repositories.QuestionRepos
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class QuestionService {
@@ -20,6 +21,23 @@ public class QuestionService {
 
     public List<Question> getQuestions(){
         return questionRepository.findAll();
+    }
+    public Question getQuestion(Integer id){
+
+        Optional<Question> question = questionRepository.findById(id);
+
+        if(question.isEmpty()){
+            return new Question();
+        }
+
+        return question.get();
+
+    }
+    public void deleteAllQuestions(){
+        questionRepository.deleteAll();
+    }
+    public void deleteQuestion(Question question){
+        questionRepository.delete(question);
     }
 
 
