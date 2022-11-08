@@ -28,8 +28,8 @@ public class UserController {
     @GetMapping(path = "/user/get/{id}")
     private ResponseEntity<User> getUser(@PathVariable int id){
         User user = service.getUser(id);
-        if(user == null){
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        if(user != null){
+            return new ResponseEntity<>(null, HttpStatus.FOUND);
         }
         else{
             return new ResponseEntity<>(user, HttpStatus.OK);
